@@ -1,6 +1,6 @@
 # xStore_Logging
 
-This repository contains scripts required to fulfill the required task, kindly follow the steps defined below to correctly install the scripts.
+This repository contains scripts required to fulfill the required task of making a log aggregator for the xStore system, kindly follow the steps defined below to correctly install the scripts on a single server.
 
 ## STEPS To Install:
 
