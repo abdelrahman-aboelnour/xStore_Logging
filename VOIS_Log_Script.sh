@@ -35,7 +35,7 @@ while [[ "$START_DATE" < "$END_DATE" ]]; do
 	fi
 	
   else
-    echo "Log file $LOG_FILE_NAME-$DATE.log does not exist in path $LOG_FILE_PATH."
+    echo "Log file $LOG_FILE_NAME-$DATE.log does not exist in path $LOG_FILES_PATH."
   fi
 
   # Increment the date by one day
