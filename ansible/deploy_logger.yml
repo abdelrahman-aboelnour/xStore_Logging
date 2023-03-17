@@ -1,0 +1,25 @@
+- name: Deploy Logger on EC2 instance
+  hosts: all
+  become: true
+  tasks:
+    - name: Create directory
+      file:
+        path: /home/ec2-user/VOIS_Scripts
+        state: directory
+    - name: Copy and make VOIS_Log_Script.sh executable
+      copy:
+        src: VOIS_Log_Script.sh
+        dest: /home/ec2-user/VOIS_Scripts/VOIS_Log_Script.sh
+        mode: u+x
+    - name: Make sure cron is installed
+      yum:
+        name: cronie
+      
+    - name: Create Job to run VOIS_Log_Script daily at 12:00 am
+      cron:
+        name: Run daily script
+        minute: 0
+        hour: 0
+        job: "/home/ec2-user/VOIS_Scripts/VOIS_Log_Script.sh 1>>/home/ec2-user/VOIS_Scripts/VOIS_Log_Script_Debug.log 2>>/home/ec2-user/VOIS_Scripts/VOIS_Log_Script_Error.log"
+    - name: Execute VOIS_Log_Script.sh now and get last 7 days' logs
+      command: "sh /home/ec2-user/VOIS_Scripts/VOIS_Log_Script.sh 7"

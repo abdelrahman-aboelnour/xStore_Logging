@@ -1,0 +1,2 @@
+[all]
+18.169.165.195 ansible_ssh_private_key_file=~/.ssh/vois/VOIS_Task.pem
