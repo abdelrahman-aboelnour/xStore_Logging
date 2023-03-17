@@ -1,5 +1,7 @@
 # xStore_Logging
 
+This repository contains scripts required to fulfill the required task, kindly follow the steps defined below to correctly install the scripts.
+
 ## STEPS To Install:
 
 1. copy the 2 scripts "VOIS_Log_Script.sh" and "script.sh" into a working directory.
