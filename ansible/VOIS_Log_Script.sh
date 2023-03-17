@@ -13,7 +13,7 @@ fi
 # Set the date range for the logs to be collected
 END_DATE=$(date +%Y-%m-%d)
 START_DATE=$(date -I -d "$END_DATE - $DAYS_T0_GO_BACK day")
-BUCKET_NAME="vois-logs-bucket"
+BUCKET_NAME="vois-logging-bucket"
 LOG_FILES_PATH="/var/log/xStore_Logs/"
 LOG_FILE_PREFIX="Backend"
 CURRENT_INSTANCE_ID=$(ec2-metadata -i | cut -d ' ' -f 2)

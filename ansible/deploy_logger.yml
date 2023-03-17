@@ -1,6 +1,5 @@
 - name: Deploy Logger on EC2 instance
   hosts: all
-  become: true
   tasks:
     - name: Create directory
       file:
@@ -23,3 +22,7 @@
         job: "/home/ec2-user/VOIS_Scripts/VOIS_Log_Script.sh 1>>/home/ec2-user/VOIS_Scripts/VOIS_Log_Script_Debug.log 2>>/home/ec2-user/VOIS_Scripts/VOIS_Log_Script_Error.log"
     - name: Execute VOIS_Log_Script.sh now and get last 7 days' logs
       command: "sh /home/ec2-user/VOIS_Scripts/VOIS_Log_Script.sh 7"
+      register: result
+    - name: Print VOIS_Log_Script.sh execution output
+      debug:
+        var: result.stdout
