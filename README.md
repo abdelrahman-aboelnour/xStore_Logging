@@ -1,6 +1,6 @@
 # xStore_Logging
 
-STEPS To Install:
+##STEPS To Install:
 
 1. copy the 2 scripts "VOIS_Log_Script.sh" and "script.sh" into a working directory.
 
